@@ -1,0 +1,63 @@
+/* components/number-keyboard/number-keyboard.wxss */
+.keyboard {
+  flex-direction: row;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.keyboard-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  flex-grow: 3;
+}
+
+.keyboard-right {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+}
+
+.keyboard-grids {
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: flex;
+}
+
+.keyboard-grids-item {
+  box-sizing: border-box;
+  flex: 0 0 33.333333%;
+  height: 60px;
+  justify-content: center;
+  display: flex;
+  border: 1px solid #f9f9f9;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.keyboard-delete {
+  height: 60px;
+  flex: none;
+}
+.keyboard-payment {
+  flex: 1;
+}
+
+.twice-much {
+  flex: 0 0 66.666666%;
+}
+
+.grid-icon {
+  width: 28px;
+  height: 20px;
+}
+
+.disbled {
+  pointer-events: none;
+  cursor: default;
+  opacity: .2;
+  background-color: var(--bgColor)
+}

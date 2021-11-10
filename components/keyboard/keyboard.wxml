@@ -1,0 +1,6 @@
+<!-- components/digital-keyboard/digital-keyboard.wxml -->
+<view wx:if="{{visible}}" class="safe-area keyboard">
+    <block wx:if="{{mode==='number'}}">
+        <number-keyboard bindonchange="onChange" bindconfirm="confirmClick" paymentText="{{paymentText}}"></number-keyboard>
+    </block>
+</view>

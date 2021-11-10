@@ -1,0 +1,29 @@
+<!-- pages/personal/withdrawal/withdrawal.wxml -->
+<view class="container">
+    <view class="balance">
+        <view class="record">
+            <image style="width: 148rpx;height:48rpx;" src="/static/personal/withdrawal-record.png" alt="提现记录" bindtap="withdrawalRecord"/>
+        </view>
+        <view class="cash">当前可提现余额</view>
+        <view class="money">0.00</view>
+    </view>
+    <view class="withdrawal_amount">
+        <view class="title">提现金额</view>
+        <view class="box_wrapper">
+            <text class="amount">￥</text>
+            <view class="input_area" bind:tap="cursorView">
+                <view class="input_view">
+                    {{markAmount}}
+                    <text class="{{keyboardVisible?'input_view_cursor':''}}"></text>
+                    <text wx:if="{{!markAmount}}" style="color:#999999;padding-left:6px">输入金额</text>
+                </view>
+            </view>
+            <text class="all_withdrawal" bindtap="allWithdrawal">全部提现</text>
+        </view>
+        <view class="describe">
+            <text>手续费：0.1%</text>
+        </view>
+        <m-button width="{{200}}">立即支付</m-button>
+    </view>
+    <keyboard visible="{{keyboardVisible}}" bindonchange="onChange" bindconfirm="confirmClick" paymentText="确定" />
+</view>

@@ -1,0 +1,28 @@
+<!-- components/number-keyboard/number-keyboard.wxml -->
+<view class="keyboard">
+    <view class="keyboard-left">
+        <view class="keyboard-grids">
+            <block wx:for="{{numList}}" wx:key="*this">
+                <view data-id="{{item}}" class="keyboard-grids-item" bindtap="keyboardClick">
+                    {{item}}
+                </view>
+            </block>
+        </view>
+        <view class='keyboard-grids'>
+            <view data-id="0" class="keyboard-grids-item twice-much" bindtap="keyboardClick">
+                0
+            </view>
+            <view data-id="{{dot}}" class="keyboard-grids-item" bindtap="keyboardClick">
+                {{dot}}
+            </view>
+        </view>
+    </view>
+    <view class="keyboard-right">
+        <view class="keyboard-grids-item keyboard-delete" bindtap="backspaceClick">
+            <image class="grid-icon" src="/static/delete.png"></image>
+        </view>
+        <view class="keyboard-grids-item keyboard-payment {{inputValue.length===0?'disbled':''}}" bindtap="confirmClick">
+            {{paymentText}}
+        </view>
+    </view>
+</view>

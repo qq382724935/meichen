@@ -1,0 +1,70 @@
+/* components/card-list/card-list.wxss */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+.card-desc-blocks {
+  background-color: #ffffff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  flex: 1;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.card-desc {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 15px 10px 10px 20px;
+}
+
+.card-tilte {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  padding-bottom: 10px;
+}
+
+.card-time {
+  font-size: 10px;
+  color: #777777;
+  font-weight: 400;
+}
+
+.amount {
+  background-color: #96bcf4;
+  width: 100px;
+  border-top-right-radius: var(--themeRadius);
+  border-bottom-right-radius: var(--themeRadius);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amount::before,
+.amount::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f8f8f8;
+  position: absolute;
+  z-index: 999;
+}
+.amount::before {
+  left: -10px;
+  top: -10px;
+}
+
+.amount::after {
+  left: -10px;
+  bottom: -10px;
+}

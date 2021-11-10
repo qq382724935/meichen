@@ -1,0 +1,44 @@
+/* pages/personal/team/team.wxss */
+
+image {
+  width: 100vw;
+}
+
+.vips {
+  position: relative;
+}
+.my-vip {
+  position: absolute;
+  top: 93px;
+  left: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.subordinate {
+  border-radius: 20px;
+  background: #fff;
+  transform: translate(0px, -20px);
+}
+
+.subordinate-total {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  padding-top: 16px;
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.list-item {
+  margin: 0 10px;
+  padding: 20px 12px;
+  box-shadow: 0px 2px 17px 0px rgba(208, 218, 237, 0.5);
+  border-radius: 13px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+}

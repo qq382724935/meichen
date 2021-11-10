@@ -1,0 +1,45 @@
+<!-- pages/member-gift-bag/member-gift-bag.wxml -->
+<!-- 会员大礼包 -->
+<view class="container">
+    <view class="vip-blocks">
+        <image src="/static/home/member-gift-bag/backgroud.png"></image>
+        <view class="vips">
+            <text class="white vip-title">会员大礼包</text>
+            <view class="white vip-cards">
+                <text>包含：</text>
+                <view class="vip-cards-item">
+                    <block wx:for="{{cards}}" wx:key="*this">
+                        <text style="margin-bottom:8px;margin-right:8px;">{{item.text}}</text>
+                    </block>
+                </view>
+            </view>
+            <view class="vip-tips">
+                <text class="power">最终解释权归本店所有</text>
+                <text class="currency">本店通用</text>
+            </view>
+        </view>
+    </view>
+    <view class="main">
+        <view class="exclusive-interests">
+            <view class="interests">
+                <text>专属权益</text>
+            </view>
+            <view class="box_wrapper">
+                <block wx:for="{{exclusiveInterestList}}" wx:key="*this">
+                    <view class="box_wrapper_item">
+                        <image class="box_wrapper_item_img" src="{{item.img}}" />
+                        <text class="box_wrapper_item_text">{{item.text}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <view>
+            <text class="money">￥98</text>
+        </view>
+        <view>
+            <m-button width="{{106}}">立即支付</m-button>
+        </view>
+    </view>
+</view>

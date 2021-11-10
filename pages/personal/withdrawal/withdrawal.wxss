@@ -1,0 +1,122 @@
+/* pages/personal/withdrawal/withdrawal.wxss */
+page {
+  background-color: var(--bgColor);
+}
+
+.container {
+  margin: 20rpx;
+}
+
+.balance {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+.balance .record {
+  align-self: flex-end;
+}
+.balance .cash {
+  align-self: center;
+  margin-bottom: 50rpx;
+  font-size: 18px;
+}
+.balance .money {
+  align-self: center;
+  font-size: 22px;
+  font-weight: 900;
+}
+.withdrawal_amount {
+  background-color: #fff;
+  margin-top: 40rpx;
+  padding: 60rpx;
+}
+
+.withdrawal_amount .title {
+  margin-bottom: 28rpx;
+}
+
+.withdrawal_amount .title {
+  margin-bottom: 28rpx;
+}
+
+.withdrawal_amount .title {
+  margin-bottom: 28rpx;
+}
+
+.withdrawal_amount .all_withdrawal{
+  font-size: 14px;
+}
+.withdrawal_amount .describe{
+  font-size: 12px;
+  color: #999999;
+  border-top: 1px solid #999999;
+  padding-top: 8px;
+  margin-top: 8px;
+  margin-bottom: 26px;
+}
+
+/* 公用input框 */
+.box_wrapper {
+  background-color: #fff;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+
+.input_area {
+  display: flex;
+  flex: 1;
+}
+
+.input_view {
+  height: 29px;
+  line-height: 29px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.input_view_cursor {
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  animation: blink 1s infinite steps(1, start);
+  position: absolute;
+  top: 2px;
+}
+
+
+.input_area {
+  display: flex;
+  flex: 1;
+}
+
+.input_view {
+  height: 29px;
+  line-height: 29px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.input_view_cursor {
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  animation: blink 1s infinite steps(1, start);
+  position: absolute;
+  top: 2px;
+}
+
+/*这里设置动画blink*/
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: var(--themeFontColor);
+  }
+}

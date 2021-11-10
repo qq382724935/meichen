@@ -1,0 +1,37 @@
+/*
+ * @Author: 刘利军
+ * @Date: 2021-09-09 16:42:23
+ * @LastEditors: 刘利军
+ * @LastEditTime: 2021-09-11 13:40:05
+ * @Description: 
+ * @PageName: 
+ */
+
+.box_wrapper {
+  margin-left: 16px;
+  margin-right: 20px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px 0px rgba(219, 239, 255, 0.5);
+  border-radius: var(--themeRadius);
+  filter: blur(0px);
+  flex-direction: row;
+  display: flex;
+  transform: translate(0px, -80px);
+}
+
+.box_wrapper_item {
+  display: flex;
+  padding: 22px 30px;
+  flex-direction: column;
+  justify-self: center;
+}
+.box_wrapper_item_img {
+  width: 49px;
+  height: 49px;
+}
+
+.box_wrapper_item_text {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 6px;
+}

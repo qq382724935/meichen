@@ -1,0 +1,89 @@
+/* pages/order/order.wxss */
+
+page {
+  background-color: var(--bgColor);
+}
+.status {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+
+.status .status-block {
+  color: #777777;
+  font-size: 14px;
+  padding-top: 17px;
+  padding-bottom: 12px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.status .status-block .click {
+  color: #7eaaf6;
+  font-size: 14px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #7eaaf6;
+}
+
+.order-item {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 10px;
+}
+
+.order-header .no {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 400;
+}
+
+.order-header .order-header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-header .order-header-right .status {
+  color: #999999;
+  font-size: 12px;
+  padding-left: 6px;
+  padding-right: 20px;
+}
+
+.order-content {
+  padding-top: 17px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 6px;
+}
+
+.order-content-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  flex: 1;
+}
+
+.order-content-info text {
+  display: flex;
+  padding-top: 5px;
+  color: #777777;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.order-content-number {
+  color: #999999;
+  font-weight: 400;
+  font-size: 12px;
+  min-width: 10px;
+  display: flex;
+  align-self: center;
+}

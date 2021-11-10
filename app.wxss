@@ -1,0 +1,38 @@
+/**app.wxss**/
+
+page {
+  --bgColor: #f6f6f6;
+  --btnRadius: 20px;
+  --themeRadius: 10px;
+  --themeFontColor: #74b2ff;
+  --themeColor: linear-gradient(
+    129deg,
+    var(--gradientStartColor) 0%,
+    var(--gradientEndColor) 100%
+  );
+  --gradientStartColor: #bde0ff;
+  --gradientEndColor: #70b1ef;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.safe-area {
+  padding-bottom: contstant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.image {
+  width: 100%;
+}
+
+.white {
+  color: #ffffff;
+}

@@ -1,0 +1,15 @@
+<!--pages/personal/withdrawal-record/withdrawal-record.wxml-->
+<view class="childs">
+        <block wx:for="{{child}}" wx:key="id">
+            <view class="child-item" >
+                <view class="child-info">
+                    <text>{{item.name}}</text>
+                    <text class="date">{{item.createDate}}</text>
+                </view>
+                <view class="child-info">
+                    <text>￥{{item.number}}</text>
+                    <text style="color:#83B7F3;font-size:12px">已完成</text>
+                </view>
+            </view>
+        </block>
+    </view>

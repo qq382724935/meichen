@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+<View class="container">
+ <View class="content">
+  <button class="btn" open-type="getPhoneNumber" bindgetphonenumber="wxLogin">
+    微信用户快速登录
+</button>
+  <text class="phont_login" bind:tap="phoneLogin">输入手机号码登录/注册</text>
+ </View>
+</View>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "会员大礼包",
+  "usingComponents": {
+    "m-button": "/components/m-button/m-button"
+  },
+  "disableScroll": true
+}

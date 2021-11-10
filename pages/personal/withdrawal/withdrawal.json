@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "提现申请",
+  "usingComponents": {
+    "keyboard": "/components/keyboard/keyboard",
+    "m-button": "/components/m-button/m-button"
+  }
+}

@@ -1,0 +1,60 @@
+/* pages/payment/payment.wxss */
+page {
+  background-color: #f6f6f6;
+}
+
+.box_wrapper {
+  background-color: #fff;
+  margin: 30px 10px 0;
+  flex-direction: row;
+  display: flex;
+  padding: 31px 20px 11px;
+  align-items: center;
+  z-index: 99;
+}
+
+.headportrait {
+  width: 180px;
+  height: 168px;
+  position: absolute;
+  right: 0;
+}
+.amount {
+  height: 40px;
+  font-size: 28px;
+}
+
+/* 公用input框 */
+.input_area {
+  display: flex;
+  flex: 1;
+}
+
+.input_view {
+  height: 29px;
+  line-height: 29px;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 26px;
+}
+
+.input_view_cursor {
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  animation: blink 1s infinite steps(1, start);
+  position: absolute;
+  top: 2px;
+}
+
+/*这里设置动画blink*/
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: var(--themeFontColor);
+  }
+}

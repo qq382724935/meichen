@@ -1,0 +1,16 @@
+/* pages/card-voucher/card-voucher.wxss */
+page {
+  background-color: #f8f8f8;
+}
+.coupons {
+  flex: 1;
+}
+
+.record {
+  display: flex;
+  height: 60px;
+  align-self: center;
+  color: #777777;
+  font-weight: 400;
+  font-size: 14px;
+}

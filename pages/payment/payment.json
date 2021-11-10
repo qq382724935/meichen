@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "付款",
+  "usingComponents": {
+    "keyboard": "/components/keyboard/keyboard"
+  }
+}

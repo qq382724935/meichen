@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/payment/payment",
+    "pages/member-gift-bag/member-gift-bag",
+    "pages/ceramic-veneer/ceramic-veneer",
+    "pages/personal/card-voucher/card-voucher",
+    "pages/personal/order/order",
+    "pages/personal/extension/extension",
+    "pages/personal/team/team",
+    "pages/personal/card-record/card-record",
+    "pages/personal/subordinate/subordinate",
+    "pages/personal/withdrawal/withdrawal",
+    "pages/personal/withdrawal-record/withdrawal-record",
+    "pages/personal/setting/setting",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#7BB8F1",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/selectedhome.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/personal/personal",
+        "iconPath": "static/personal.png",
+        "selectedIconPath": "static/selectedpersonal.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

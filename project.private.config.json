@@ -1,0 +1,84 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/payment/payment",
+          "pathName": "pages/payment/payment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/member-gift-bag/member-gift-bag",
+          "pathName": "pages/member-gift-bag/member-gift-bag",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/card-voucher/card-voucher",
+          "pathName": "pages/personal/card-voucher/card-voucher",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/card-record/card-record",
+          "pathName": "pages/personal/card-record/card-record",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/order/order",
+          "pathName": "pages/personal/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/ceramic-veneer/ceramic-veneer",
+          "pathName": "pages/ceramic-veneer/ceramic-veneer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/team/team",
+          "pathName": "pages/personal/team/team",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/subordinate/subordinate",
+          "pathName": "pages/personal/subordinate/subordinate",
+          "query": "data=%257B%2522roleName%2522%3A%2522%25E6%25B8%25B8%25E5%25AE%25A2%2522%2C%2522number%2522%3A60%2C%2522id%2522%3A1%2C%2522child%2522%3A%255B%257B%2522name%2522%3A%2522%25E8%25B7%25AF%25E4%25BA%25BA%25E7%2594%25B2%2522%2C%2522createDate%2522%3A%25222020-29-03%2522%2C%2522number%2522%3A20%257D%2C%257B%2522name%2522%3A%2522%25E8%25B7%25AF%25E4%25BA%25BA%25E7%2594%25B2%2522%2C%2522createDate%2522%3A%25222020-29-03%2522%2C%2522number%2522%3A40%257D%255D%257D",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/withdrawal/withdrawal",
+          "pathName": "pages/personal/withdrawal/withdrawal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/withdrawal-record/withdrawal-record",
+          "pathName": "pages/personal/withdrawal-record/withdrawal-record",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

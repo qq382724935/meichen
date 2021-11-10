@@ -1,0 +1,37 @@
+<!-- pages/ceramic-veneer/ceramic-veneer.wxml -->
+<!-- 全瓷贴面 -->
+<view class="container">
+    <image src="/static/home/ceramic-veneer-bg.png"></image>
+    <view class="main">
+        <view class="exclusive-interests">
+            <view class="interests">
+                <text>商品规则</text>
+            </view>
+            <view class="box_wrapper">
+                <block wx:for="{{exclusiveInterestList}}" wx:key="id">
+                    <view data-id="{{item.id}}" class="box_wrapper_item" bindtap="skuClick">
+                        {{item.text}}
+                        <view wx:if="{{item.id===skuIndexKey}}" class="taiangle">
+                            <view class="check"></view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <view class="footer-left">
+            <text class="money">￥{{amount}}</text>
+            <view class="numbers">
+                <view bindtap="removeNumber" class="add">
+                    <text>-</text>
+                </view>
+                <view class="number">{{number}}</view>
+                <view bindtap="addNumber" class="remove">
+                    <text>+</text>
+                </view>
+            </view>
+        </view>
+        <m-button width="{{106}}">立即支付</m-button>
+    </view>
+</view>

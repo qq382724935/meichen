@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "number-keyboard": "/components/number-keyboard/number-keyboard"
+  }
+}

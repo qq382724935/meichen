@@ -1,0 +1,17 @@
+<view>
+    <block wx:for="{{list}}" wx:key="key">
+        <view class="card">
+            <view class="card-desc-blocks">
+                <view class="card-desc">
+                    <text class="card-tilte">{{item.type}}</text>
+                    <text class="card-time">有效期至{{item.time}}</text>
+                </view>
+                <image style="width:70px;height:70px" src="{{background}}"></image>
+            </view>
+            <view class="amount" style="background-color:{{status>10?'#c4c4c4':'#96bcf4'}}">
+                <text class="white">￥</text>
+                <text class="white" style="font-size:36px">{{item.money}}</text>
+            </view>
+        </view>
+    </block>
+</view>

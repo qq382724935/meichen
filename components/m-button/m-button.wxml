@@ -1,0 +1,4 @@
+<!-- components/m-button/m-button.wxml -->
+<button class="btn" style="width:{{width}}px !important" bindtap="onMyButtonTap">
+    <slot></slot>
+</button>

@@ -1,0 +1,60 @@
+<!-- pages/personal.wxml -->
+<view class="container">
+    <image class="image" src="/static/personal/backgroud.png" />
+    <view class="role-info">
+        <view class="header"></view>
+        <view class="roles">
+            <text style="color:#fff">甲乙丙</text>
+            <text class="role">合伙人</text>
+        </view>
+    </view>
+    <view class="main">
+        <view class="box_wrapper">
+            <block wx:for="{{wrapperList}}" wx:key="key">
+                <navigator hover-class="none" class="box_wrapper_item" url="{{item.url}}">
+                    <image class="box_wrapper_item_img" src="{{item.img}}" />
+                    <text class="box_wrapper_item_text">{{item.text}}</text>
+                </navigator>
+            </block>
+        </view>
+        <view class="commission">
+            <view class="remind">
+                <view class="withdrawal-amount">
+                    <text class="text">当前可提现金额</text>
+                    <text class="amount">￥0.00</text>
+                </view>
+                <view class="balance-detal">
+                    <text class="balance">余额明细</text>
+                    <m-button width="{{118}}" url='/pages/personal/withdrawal/withdrawal'>
+                        去提现
+                    </m-button>
+                </view>
+            </view>
+            <view class="entry">
+                <view class="entry-item">
+                    <text>待入账</text>
+                    <text>￥0.00</text>
+                </view>
+                <view class="entry-item">
+                    <text>累计到账</text>
+                    <text>￥0.00</text>
+                </view>
+                <view class="entry-item">
+                    <text>累计提现</text>
+                    <text>￥0.00</text>
+                </view>
+            </view>
+        </view>
+        <view class="help_center">
+            <view style="padding:20px;font-size:20px">帮助中心</view>
+            <view class="content">
+                <block wx:for="{{helps}}" wx:key="key">
+                    <navigator hover-class="none" class="box_wrapper_item" url="{{item.url}}">
+                        <image class="box_wrapper_item_img" src="{{item.img}}" />
+                        <text class="box_wrapper_item_text">{{item.text}}</text>
+                    </navigator>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>

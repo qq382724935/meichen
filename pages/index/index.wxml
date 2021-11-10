@@ -1,0 +1,12 @@
+<!-- index.wxml -->
+<view class="container">
+  <image class="image" src="/static/home/backgroud.png" />
+  <view class="box_wrapper">
+    <block wx:for="{{wrapperList}}" wx:key="key">
+      <navigator hover-class="none" class="box_wrapper_item" url="{{item.url}}">
+        <image class="box_wrapper_item_img" src="{{item.img}}" />
+        <text class="box_wrapper_item_text">{{item.text}}</text>
+      </navigator>
+    </block>
+  </view>
+</view>

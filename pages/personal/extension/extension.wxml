@@ -1,0 +1,5 @@
+<!-- pages/personal/extension/extension.wxml -->
+<view class="container">
+    <image class="image" src="/static/personal/extensionbkg.png" />
+    <m-button width="300">保存图片</m-button>
+</view>

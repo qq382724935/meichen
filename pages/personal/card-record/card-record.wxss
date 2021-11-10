@@ -1,0 +1,22 @@
+/* pages/personal/card-record/card-record.wxss */
+
+page {
+  background: #f8f8f8;
+}
+.card-status {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  color: #333333;
+  justify-content: space-evenly;
+  padding: 13px 0;
+  font-weight: 500;
+}
+
+.click {
+  color: #7eaaf6;
+  font-size: 14px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #7eaaf6;
+}

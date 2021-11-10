@@ -1,0 +1,17 @@
+<!-- pages/personal/subordinate/subordinate.wxml -->
+<view>
+    <view class="roles">
+        <text>{{roleName}}【{{number}}】</text>
+    </view>
+    <view class="childs">
+        <block wx:for="{{child}}" wx:key="id">
+            <view class="child-item" >
+                <view class="child-info">
+                    <text>{{item.name}}</text>
+                    <text class="date">{{item.createDate}}</text>
+                </view>
+                <view class="child-number">（{{item.number}}）</view>
+            </view>
+        </block>
+    </view>
+</view>

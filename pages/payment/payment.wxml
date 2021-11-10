@@ -1,0 +1,16 @@
+<!-- pages/payment/payment.wxml -->
+<!-- 付款 -->
+<view class="container">
+    <image class="headportrait" mode="widthFix" src="/static/headportrait.png"></image>
+    <view class="box_wrapper" bind:tap="cursorView">
+        <text class="amount">￥</text>
+        <view class="input_area">
+            <view class="input_view">
+                {{markAmount}}
+                <text class="{{keyboardVisible?'input_view_cursor':''}}"></text>
+                <text wx:if="{{!markAmount}}" style="color:#999999;padding-left:6px">输入金额</text>
+            </view>
+        </view>
+    </view>
+    <keyboard visible="{{keyboardVisible}}" bindonchange="onChange" bindconfirm="confirmClick" />
+</view>

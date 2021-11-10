@@ -1,0 +1,39 @@
+/* pages/personal/subordinate/subordinate.wxss */
+
+.roles {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 14px;
+}
+
+.childs {
+  box-shadow: 0px 2px 17px 0px rgba(208, 218, 237, 0.5);
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.child-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 18px;
+  border-bottom: 1px solid #efefef;
+  align-items: center;
+}
+.child-info text {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.child-info .date {
+  font-size: 12px;
+  padding-top: 5px;
+  color: #777777;
+}
+
+.child-number {
+  font-size: 14px;
+  font-weight: 400;
+}

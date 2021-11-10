@@ -1,0 +1,27 @@
+<!-- pages/personal/team/team.wxml -->
+<view>
+    <view class="vips">
+        <image mode="widthFix" src="/static/personal/myteambackgroud.png"></image>
+        <view class="my-vip">
+            <text>我的会员</text>
+        </view>
+    </view>
+    <view class="subordinate">
+        <view class="subordinate-total">
+            <text>直推下级 【8】</text>
+        </view>
+        <view>
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="list-item" data-item="{{item}}" bindtap="goto">
+                    <view>
+                        {{item.roleName}}【{{item.number}}】
+                        <image wx:if="{{index===0}}" style="width:12px;height:12px" src="/static/personal/heat.png"></image>
+                    </view>
+                    <view>
+                        <image style="width:12px;height:12px" src="/static/right.png"></image>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

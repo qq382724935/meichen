@@ -1,0 +1,11 @@
+<!-- pages/card-voucher/card-voucher.wxml -->
+<view class="container">
+    <view class="coupons">
+        <card-list list="{{cardList}}"></card-list>
+    </view>
+    <view class="record">
+        <navigator url="/pages/personal/card-record/card-record">
+            <text>使用记录</text>
+        </navigator>
+    </view>
+</view>

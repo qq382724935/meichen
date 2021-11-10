@@ -1,0 +1,114 @@
+/* pages/ceramic-veneer/ceramic-veneer.wxss */
+
+page {
+  background-color: #f8f9fc;
+}
+image {
+  width: 100vw;
+}
+
+.main {
+  margin: 0 10px;
+}
+.exclusive-interests {
+  background: #fff;
+  border-radius: var(--themeRadius);
+  box-shadow: 0px 2px 4px 0px rgba(219, 239, 255, 0.5);
+  filter: blur(0px);
+  min-height: 270px;
+}
+.interests {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.box_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.box_wrapper_item {
+  display: flex;
+  justify-content: center;
+  background-color: #eef1f7;
+  border-radius: 4px;
+  width: 149px;
+  font-size: 12px;
+  margin-bottom: 20px;
+  padding: 8px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.box_wrapper_item_img {
+  width: 35px;
+  height: 30px;
+}
+
+.taiangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid #528aff;
+  border-bottom: 8px solid #528aff;
+}
+.check {
+  display: block;
+  width: 2px;
+  height: 6px;
+  border: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.footer {
+  height: 82px;
+  box-shadow: 0px 2px 17px 0px rgba(208, 218, 237, 0.5);
+  padding-left: 21px;
+  padding-right: 15px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.numbers {
+  margin-left: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.number{
+  margin: 0 10px;
+  font-size: 12px;
+}
+.add,
+.remove {
+  background-color: #528aff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 13px;
+}
+
+.money {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--themeFontColor);
+}

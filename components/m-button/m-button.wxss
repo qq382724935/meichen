@@ -1,0 +1,9 @@
+/* components/m-button/m-button.wxss */
+
+.btn {
+  background-image: var(--themeColor);
+  border-radius: var(--btnRadius);
+  color: #fff;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

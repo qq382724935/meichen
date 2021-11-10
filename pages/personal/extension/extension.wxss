@@ -1,0 +1,12 @@
+/* pages/personal/extension/extension.wxss */
+
+
+.container{
+  align-items:  center;
+  padding-top: 42px;
+}
+.image{
+    height: 477px;
+    width: 80vw;
+    margin-bottom: 26px;
+}

@@ -1,0 +1,126 @@
+/* pages/member-gift-bag/member-gift-bag.wxss */
+
+page {
+  background-color: var(--bgColor);
+}
+
+.vip-blocks {
+  height: 261px;
+  background-size: 100% 100%;
+  width: 375px;
+  position: relative;
+}
+
+.vip-blocks image {
+  width: 100%;
+  height: 100%;
+}
+
+.vips {
+  padding: 58px 36px 20px 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  top: 0px;
+}
+.vip-title {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.vip-cards {
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 12px;
+  flex: 1;
+}
+
+.vip-cards-item {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 80px;
+  flex: 1;
+}
+
+.vip-tips {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.power {
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.currency {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 20px;
+  padding: 6px 20px;
+}
+
+.exclusive-interests {
+  background: #fff;
+  border-radius: var(--themeRadius);
+  box-shadow: 0px 2px 4px 0px rgba(219, 239, 255, 0.5);
+  filter: blur(0px);
+}
+.interests {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.box_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box_wrapper_item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 33.333333%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.box_wrapper_item_img {
+  width: 35px;
+  height: 30px;
+}
+
+.box_wrapper_item_text {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 13px;
+}
+
+.footer {
+  height: 82px;
+  box-shadow: 0px 2px 17px 0px rgba(208, 218, 237, 0.5);
+  padding-left: 21px;
+  padding-right: 15px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.footer-left{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.money {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--themeFontColor);
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "登录页",
+  "usingComponents": {
+    "m-button": "/components/m-button/m-button"
+  }
+}
