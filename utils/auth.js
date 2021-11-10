@@ -2,18 +2,16 @@
  * @Author: 刘利军
  * @Date: 2021-09-23 20:07:56
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-10-17 16:39:28
+ * @LastEditTime: 2021-11-10 15:21:49
  * @Description:
  * @PageName:
  */
 var request = require("./request.js");
-var setting = require("../setting");
 /** 登录授权逻辑模块,不要在app.js使用 */
 module.exports = {
   app: function () {
     return getApp();
   },
-
   doLogin: function () {
     return new Promise((resolve, reject) => {
       const app = this.app();
@@ -23,32 +21,28 @@ module.exports = {
             wx.login({
               complete: (login) => {
                 request.get("/user/session", {
-                   data:{ code:login.code},
+                  data: { code: login.code },
                   success: function (res) {
-                    console.log(res)
+                    let userInfo = {};
+                    const resData = res.data.result;
                     if (res.data.code == 0) {
-                      const resData = res.data.obj.data;
-                      let userInfo = {};
-                      if (resData.IS_MEMBER) {
-                          userInfo = {
-                              openId: resData.FOPEN_ID,
-                              unionId: resData.FUNION_ID,
-                              isMember: true,
-                              phone: resData.FPHONE,
-                              level: resData.FLEVEL,
-                              memberId: resData.MEMBER_ID,
-                              TY_LOTTERY_CODE_WX: resData.TY_LOTTERY_CODE_WX,
-                              key: resData.KEY,
-                              crmOpenId: resData.CRM_OPENID
-                          }
-                      } else {
-                          userInfo = {
-                              openId: resData.openId,
-                              unionId: resData.unionId,
-                              isMember: false
-                          }
-                      }
-                      app.globalData.user = userInfo
+                      app.globalData.user = userInfo;
+                      resolve(userInfo);
+                    } else if (res.data.code == -1) {
+                      wx.getUserInfo({
+                        success: function (userInfo) {
+                          request.post("/user/login", {
+                            data: {
+                              encrypted_data: userInfo.encryptedData,
+                              iv: userInfo.iv,
+                              open_id: resData.openid,
+                            },
+                            success: (res) => {
+                              console.log("res", res);
+                            },
+                          });
+                        },
+                      });
                       resolve(userInfo);
                     } else {
                       reject(false);
@@ -62,8 +56,8 @@ module.exports = {
             });
           } else {
             wx.redirectTo({
-              url: '/pages/login/login',
-            })
+              url: "/pages/login/login",
+            });
           }
         },
       });

@@ -87,13 +87,8 @@ module.exports = {
             return false;
         }
 
-        if (res.data.code == 0) {
+        if (res.data.code == 0 || res.data.code == -1) {
             typeof options.success == 'function' && options.success(res);
-        }else if(res.data.code == -2){
-            wx.hideLoading();   
-            wx.navigateTo({
-              url: '/pages/login/login',
-            })
         } else {
             wx.hideLoading();
             if (typeof options.fail == 'function') {
