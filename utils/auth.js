@@ -22,7 +22,7 @@ module.exports = {
           if (res.authSetting["scope.userInfo"]) {
             wx.login({
               complete: (login) => {
-                request.post("/user/session", {
+                request.get("/user/session", {
                    data:{ code:login.code},
                   success: function (res) {
                     console.log(res)
