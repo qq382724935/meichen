@@ -30,7 +30,7 @@ Page({
           data: {
             encrypted_data: userInfo.encryptedData,
             iv: userInfo.iv,
-            open_id: openId,
+            open_id: openid,
           },
           success: (res) => {
             const token = res.data.result.token;
