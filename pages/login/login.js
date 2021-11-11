@@ -22,7 +22,7 @@ Page({
    */
   onLoad: function (options) {},
   wxLogin: function (res) {
-    const openId = app.globalData.userInfo.openId;
+    const openid = app.globalData.userInfo.openid;
     wx.getUserProfile({
       desc: "获取你的昵称、头像",
       success: function (userInfo) {
@@ -33,9 +33,10 @@ Page({
             open_id: openid,
           },
           success: (res) => {
-            const token = res.data.result.token;
-            app.globalData.userInfo.token = token;
-            resolve(userInfo);
+            app.globalData.userInfo.token = res.data.result.token;
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
           },
           fail: () => {
             console.log("fail", res);

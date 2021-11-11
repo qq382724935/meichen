@@ -24,6 +24,7 @@ module.exports = {
                   data: { code: login.code },
                   success: function (res) {
                     const resData = res.data.result;
+                    console.log(resData)
                     if (res.data.code == 200) {
                       app.globalData.userInfo = resData;
                       request.get("/user/info", {
