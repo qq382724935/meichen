@@ -2,11 +2,14 @@
  * @Author: 刘利军
  * @Date: 2021-09-11 14:42:30
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-09-22 20:56:33
+ * @LastEditTime: 2021-11-11 07:53:09
  * @Description:
  * @PageName:
  */
 // pages/personal/team/team.js
+var app = getApp();
+var request = app.request;
+
 Page({
   /**
    * 页面的初始数据
@@ -83,6 +86,13 @@ Page({
         child: [],
       },
     ],
+  },
+  onLoad: function () {
+    request.get("/level/list", {
+      success: function (res) {
+        console.log("team", res);
+      },
+    });
   },
   goto: function (event) {
     wx.navigateTo({

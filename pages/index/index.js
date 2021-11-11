@@ -48,8 +48,8 @@ Component({
         });
         auth
           .doLogin()
-          .then((res) => {
-            console.log("res123", res);
+          .then(() => {
+            wx.hideLoading();
           })
           .catch((error) => {
             console.log("error", error);

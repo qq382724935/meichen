@@ -2,7 +2,7 @@
  * @Author: 刘利军
  * @Date: 2021-09-23 20:07:56
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-11-10 15:21:49
+ * @LastEditTime: 2021-11-10 16:32:25
  * @Description:
  * @PageName:
  */
@@ -23,27 +23,20 @@ module.exports = {
                 request.get("/user/session", {
                   data: { code: login.code },
                   success: function (res) {
-                    let userInfo = {};
                     const resData = res.data.result;
-                    if (res.data.code == 0) {
-                      app.globalData.user = userInfo;
-                      resolve(userInfo);
-                    } else if (res.data.code == -1) {
-                      wx.getUserInfo({
-                        success: function (userInfo) {
-                          request.post("/user/login", {
-                            data: {
-                              encrypted_data: userInfo.encryptedData,
-                              iv: userInfo.iv,
-                              open_id: resData.openid,
-                            },
-                            success: (res) => {
-                              console.log("res", res);
-                            },
-                          });
-                        },
+                    if (res.data.code == 200) {
+                      app.globalData.userInfo = resData;
+                      request.get("/user/info", {
+                        success:function(res){
+                          console.log(res)
+                        }
                       });
-                      resolve(userInfo);
+                      resolve(resData);
+                    } else if (res.data.code == -1) {
+                      app.globalData.userInfo = userInfo;
+                      wx.redirectTo({
+                        url: "/pages/login/login",
+                      });
                     } else {
                       reject(false);
                     }
