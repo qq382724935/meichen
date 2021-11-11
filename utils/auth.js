@@ -33,7 +33,7 @@ module.exports = {
                       });
                       resolve(resData);
                     } else if (res.data.code == -1) {
-                      app.globalData.userInfo = userInfo;
+                      app.globalData.userInfo = resData;
                       wx.redirectTo({
                         url: "/pages/login/login",
                       });
