@@ -2,11 +2,15 @@
  * @Author: 刘利军
  * @Date: 2021-09-22 20:24:56
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-09-22 20:58:39
+ * @LastEditTime: 2021-11-11 18:43:01
  * @Description:
  * @PageName:
  */
 // pages/personal/subordinate/subordinate.js
+
+var app = getApp();
+var request = app.request;
+
 Page({
   /**
    * 页面的初始数据
@@ -22,45 +26,29 @@ Page({
    */
   onLoad: function (options) {
     const data = JSON.parse(decodeURI(options.data));
+    const self = this;
     this.setData({
       roleName: data.roleName,
       number: data.number,
-      child: data.child,
+    });
+    wx.showLoading({ mask: true });
+    request.get("/level/list", {
+      data: { level_id: data.id },
+      success: function (res) {
+        const child = res.data.result.map((item) => {
+          return {
+            name: item.nickname,
+            id: item.id,
+            number: item.count,
+            avatar: item.avatar,
+            createDate: "20200",
+          };
+        });
+        self.setData({ child });
+      },
+      complete: function () {
+        wx.hideLoading();
+      },
     });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
 });

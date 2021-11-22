@@ -3,34 +3,43 @@
     <view class="status">
         <block wx:for="{{statusList}}" wx:key="key">
             <view data-key="{{item.key}}" class="status-block" bindtap="getStatusKey">
-                <text data-key="{{item.key}}" class="{{item.key===indexKey?'click':''}}">{{item.text}}</text>
+                <text data-key="{{item.key}}" class="{{item.key===indexKey?'click':''}}">
+                    {{item.text}}
+                </text>
             </view>
         </block>
     </view>
     <view class="order">
-        <view class="order-item">
-            <view class="order-header">
-                <text class="no">订单编号：13484757</text>
-                <view class="order-header-right">
-                    <text class="status">已完成</text>
-                    <image style="width:10px;height:9px" src="/static/personal/del.png" />
+        <block wx:for="{{orderList}}">
+            <view class="order-item">
+                <view class="order-header">
+                    <text class="no">订单编号：{{item.order_sn}}</text>
+                    <view class="order-header-right">
+                        <text class="status">{{item.pay_status==='0'?'待付款':'已付款'}}</text>
+                        <image style="width:10px;height:9px" src="/static/personal/del.png" />
+                    </view>
+                </view>
+                <view class="order-content">
+                    <image style="width:60px;height:60px" src="{{item.ima_path}}" />
+                    <view class="order-content-info">
+                        <view>
+                            <text style="color:#333333;font-weight:500;">
+                                {{item.goods_name||'其它'}}
+                            </text>
+                        </view>
+                        <view>
+                            <text>{{item.add_time}}</text>
+                        </view>
+                    </view>
+                    <view class="order-content-number">
+                        <text>x{{item.order_num}}</text>
+                    </view>
+                </view>
+                <view class="order-footer">
+                    <view></view>
+                    <view></view>
                 </view>
             </view>
-            <view class="order-content">
-                <image style="width:60px;height:60px" src="/static/personal/all-ceramic-veneer.png" />
-                <view class="order-content-info">
-                    <text style="color:#333333;font-weight:500;">全瓷贴面</text>
-                    <text>类型</text>
-                    <text>2021-08-28 19:02:29</text>
-                </view>
-                <view class="order-content-number">
-                    <text>x1</text>
-                </view>
-            </view>
-            <view class="order-footer">
-                <view></view>
-                <view></view>
-            </view>
-        </view>
+        </block>
     </view>
 </view>

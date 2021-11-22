@@ -2,10 +2,13 @@
  * @Author: 刘利军
  * @Date: 2021-09-09 16:53:32
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-10-17 16:18:35
+ * @LastEditTime: 2021-11-11 11:04:59
  * @Description:
  * @PageName:
  */
+
+var app = getApp();
+
 Component({
   pageLifetimes: {
     show() {
@@ -14,9 +17,18 @@ Component({
           selected: 1,
         });
       }
+      this.setData({userData:app.globalData.userData})
     },
   },
   data: {
+    userData: {
+      nickname: "",
+      total_amount: "",
+      balance: "",
+      avatar: "",
+      tel: "",
+      level_id:''
+    },
     wrapperList: [
       {
         text: "推广",

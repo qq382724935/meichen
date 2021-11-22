@@ -2,11 +2,15 @@
  * @Author: 刘利军
  * @Date: 2021-09-11 14:41:13
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-09-20 12:46:03
+ * @LastEditTime: 2021-11-12 16:33:46
  * @Description:
  * @PageName:
  */
 // pages/order/order.js
+
+var app = getApp();
+var request = app.request;
+
 Page({
   /**
    * 页面的初始数据
@@ -14,53 +18,37 @@ Page({
   data: {
     statusList: [
       { text: "全部", key: "all" },
-      { text: "待付款", key: "pending" },
-      { text: "已付款", key: "paid" },
+      { text: "待付款", key: "0" },
+      { text: "已付款", key: "1" },
     ],
+    orderList: [],
     indexKey: "all",
   },
 
   getStatusKey: function (event) {
     this.setData({ indexKey: event.target.dataset.key });
+    this.getOrderList();
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
+  onLoad: function () {
+    this.getOrderList();
+  },
+  getOrderList: function () {
+    const self = this;
+    request.showLoading();
+    const data =
+      this.data.indexKey === "all" ? {} : { pay_status: this.data.indexKey };
+    request.get("/order/get-list", {
+      data,
+      success: function (res) {
+        self.setData({ orderList: res?.data?.result || [] });
+      },
+      complete: function () {
+        request.hideLoading();
+      },
+    });
+  },
 });

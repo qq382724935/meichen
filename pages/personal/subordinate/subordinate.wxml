@@ -5,12 +5,15 @@
     </view>
     <view class="childs">
         <block wx:for="{{child}}" wx:key="id">
-            <view class="child-item" >
-                <view class="child-info">
-                    <text>{{item.name}}</text>
-                    <text class="date">{{item.createDate}}</text>
+            <view class="child-item">
+                <image style="width:50px;height:50px" src="{{item.avatar}}" />
+                <view class="item-right">
+                    <view class="child-info">
+                        <text>{{item.name}}</text>
+                        <text class="date">{{item.createDate}}</text>
+                    </view>
+                    <view class="child-number">（{{item.number}}）</view>
                 </view>
-                <view class="child-number">（{{item.number}}）</view>
             </view>
         </block>
     </view>

@@ -77,6 +77,18 @@
           "pathName": "pages/personal/withdrawal-record/withdrawal-record",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/personal/real-name-authentication/real-name-authentication",
+          "pathName": "pages/personal/real-name-authentication/real-name-authentication",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "pid=8",
+          "scene": null
         }
       ]
     }

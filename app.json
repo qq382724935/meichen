@@ -14,7 +14,8 @@
     "pages/personal/withdrawal/withdrawal",
     "pages/personal/withdrawal-record/withdrawal-record",
     "pages/personal/setting/setting",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/personal/real-name-authentication/real-name-authentication"
   ],
   "window": {
     "backgroundTextStyle": "light",

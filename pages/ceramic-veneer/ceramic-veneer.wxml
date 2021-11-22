@@ -8,10 +8,10 @@
                 <text>商品规则</text>
             </view>
             <view class="box_wrapper">
-                <block wx:for="{{exclusiveInterestList}}" wx:key="id">
-                    <view data-id="{{item.id}}" class="box_wrapper_item" bindtap="skuClick">
+                <block wx:for="{{exclusiveInterestList}}" wx:key="sku">
+                    <view data-id="{{item.sku}}" class="box_wrapper_item" bindtap="skuClick">
                         {{item.text}}
-                        <view wx:if="{{item.id===skuIndexKey}}" class="taiangle">
+                        <view wx:if="{{item.sku===skuIndexKey}}" class="taiangle">
                             <view class="check"></view>
                         </view>
                     </view>
@@ -32,6 +32,6 @@
                 </view>
             </view>
         </view>
-        <m-button width="{{106}}">立即支付</m-button>
+        <m-button width="{{106}}" bindcustomevent="pay">立即支付</m-button>
     </view>
 </view>

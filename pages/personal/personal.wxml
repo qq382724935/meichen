@@ -2,10 +2,12 @@
 <view class="container">
     <image class="image" src="/static/personal/backgroud.png" />
     <view class="role-info">
-        <view class="header"></view>
+        <view class="header">
+            <image class="header" src="{{userData.avatar}}" />
+        </view>
         <view class="roles">
-            <text style="color:#fff">甲乙丙</text>
-            <text class="role">合伙人</text>
+            <text style="color:#fff">{{userData.nickname}}</text>
+            <text class="role">{{userData.level_id}}</text>
         </view>
     </view>
     <view class="main">
@@ -21,7 +23,7 @@
             <view class="remind">
                 <view class="withdrawal-amount">
                     <text class="text">当前可提现金额</text>
-                    <text class="amount">￥0.00</text>
+                    <text class="amount">￥{{userData.balance}}</text>
                 </view>
                 <view class="balance-detal">
                     <text class="balance">余额明细</text>
@@ -37,7 +39,7 @@
                 </view>
                 <view class="entry-item">
                     <text>累计到账</text>
-                    <text>￥0.00</text>
+                    <text>￥{{userData.total_amount}}</text>
                 </view>
                 <view class="entry-item">
                     <text>累计提现</text>

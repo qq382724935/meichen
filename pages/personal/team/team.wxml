@@ -8,7 +8,7 @@
     </view>
     <view class="subordinate">
         <view class="subordinate-total">
-            <text>直推下级 【8】</text>
+            <text>直推下级 【{{total}}】</text>
         </view>
         <view>
             <block wx:for="{{list}}" wx:key="id">

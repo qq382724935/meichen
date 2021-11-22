@@ -2,38 +2,39 @@
  * @Author: 刘利军
  * @Date: 2021-09-09 19:53:02
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-09-22 19:02:27
+ * @LastEditTime: 2021-11-11 20:42:12
  * @Description:
  * @PageName:
  */
+
+var app = getApp();
+var request = app.request;
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    exclusiveInterestList: [
-      {
-        text: "全瓷超薄牙贴",
-        img: "/static/home/member-gift-bag/card.png",
-        id: "1",
-        moeny: 83,
-      },
-      {
-        text: "E-MAX超薄全瓷贴面",
-        img: "/static/home/member-gift-bag/reception.png",
-        id: "2",
-        moeny: 823,
-      },
-      {
-        text: "超薄进口全瓷贴面",
-        img: "/static/home/member-gift-bag/vip.png",
-        id: "3",
-        moeny: 393,
-      },
-    ],
+    exclusiveInterestList: [],
     skuIndexKey: "",
     number: 1,
     amount: 0,
+  },
+  onLoad: function () {
+    const self = this;
+    request.get("/goods/detail", {
+      data: { code: 'G7363566215474237327' },
+      success: function (res) {
+        const exclusiveInterestList = res.data.result.data_specs.map((item) => {
+          return {
+            text: item.name,
+            sku: item.sku,
+            selling: Number.parseFloat(item.selling,2),
+          };
+        });
+        self.setData({ exclusiveInterestList});
+      },
+    });
   },
   skuClick: function (event) {
     const id = event.target.dataset.id;
@@ -41,14 +42,14 @@ Page({
     this.setData({ skuIndexKey: id, amount, number: 1 });
   },
   clickItemAmount: function (id) {
-    let valur = 0;
+    let value = 0;
     this.data.exclusiveInterestList.some((item) => {
-      if (item.id === id) {
-        valur = item.moeny;
+      if (item.sku === id) {
+        value = item.selling;
         return true;
       }
     });
-    return valur;
+    return value;
   },
   addNumber: function () {
     const { number, amount, skuIndexKey } = this.data;
@@ -64,5 +65,25 @@ Page({
         amount: amount - itemAmount,
       });
     }
+  },
+  pay: function (event) {
+    const { amount, number, skuIndexKey } = this.data;
+    request.pay({
+      data: {
+        order_amount: amount,
+        goods_sku: skuIndexKey,
+        good_num: number,
+      },
+      success:function(res){
+        const config = res.data.result.config;
+        wx.requestOrderPayment({
+          timeStamp:config.timestamp,
+          nonceStr:config.nonceStr,
+          signType:'MD5',
+          paySign:config.paySign,
+          package:config.package,
+        });
+      }
+    });
   },
 });

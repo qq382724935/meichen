@@ -17,7 +17,7 @@ module.exports = {
     //设置默认头部
     var header = options.header ? options.header : {};
     if (this.getToken()) {
-      header.token = this.getToken();
+      header.Authorization = `Bearer ${this.getToken()}`;
     }
     //设置请求方式并做相应处理
     method = method.toUpperCase();
@@ -42,6 +42,9 @@ module.exports = {
         fail: function (res) {
           // options.isShowLoading && that.hideLoading();
           that.doFail(options, res);
+        },
+        complete: function (res) {
+          typeof options.complete == "function" && options.complete(res);
         },
       })
     );
@@ -184,9 +187,9 @@ module.exports = {
     return this.uniqueId;
   },
 
-  showLoading: function () {
+  showLoading: function (title='') {
     wx.showLoading({
-      title: "加载中",
+      title: title||"加载中",
     });
   },
 
@@ -210,5 +213,43 @@ module.exports = {
         // }
       });
     }
+  },
+  // 创建订单
+  createOrder: function (option,type=false) {
+    const self = this;
+    const {success,fail} =option
+    this.post("/order/add", {
+      data: option.data,
+      success: function (res) {
+        const order_sn = res.data.result.order_no;
+        if (success && typeof success === "function"&&type) {
+          success();
+        } else {
+          self.orderPay(
+            order_sn,
+            success,
+            fail
+          );
+        }
+      },
+      fail: function (fail) {
+        err && err(fail);
+      },
+    });
+  },
+  // 支付成功
+  orderPay: function (order_sn, func, err) {
+    this.get(`/order/pay?order_no=${order_sn}`, {
+      success: function (res) {
+        func && func(res);
+      },
+      fail: function (fail) {
+        err && err(fail);
+      },
+    });
+  },
+  //支付
+  pay: function (option) {
+    this.createOrder(option);
   },
 };
