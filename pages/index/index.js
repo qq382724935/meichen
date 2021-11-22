@@ -55,11 +55,15 @@ Component({
         request.showLoading();
       }
       const page = getCurrentPages()[0];
+      if(page.options.pid){
+
       page.options.pid&& request.get('/user/bind',{
         data:{
           pid:page.options.pid
         }
       })
+    }
+
     },
   },
 });

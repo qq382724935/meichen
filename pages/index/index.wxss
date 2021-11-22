@@ -2,7 +2,7 @@
  * @Author: 刘利军
  * @Date: 2021-09-09 16:42:23
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-09-11 13:40:05
+ * @LastEditTime: 2021-11-22 18:35:08
  * @Description: 
  * @PageName: 
  */
@@ -17,6 +17,7 @@
   flex-direction: row;
   display: flex;
   transform: translate(0px, -80px);
+  justify-content: space-around;
 }
 
 .box_wrapper_item {

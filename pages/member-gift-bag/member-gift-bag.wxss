@@ -7,7 +7,6 @@ page {
 .vip-blocks {
   height: 261px;
   background-size: 100% 100%;
-  width: 375px;
   position: relative;
 }
 
@@ -22,7 +21,9 @@ page {
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
-  top: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .vip-title {
   font-size: 22px;

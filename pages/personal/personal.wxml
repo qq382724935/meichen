@@ -3,7 +3,7 @@
     <image class="image" src="/static/personal/backgroud.png" />
     <view class="role-info">
         <view class="header">
-            <image class="header" src="{{userData.avatar}}" />
+            <image class="header" src="{{userData.headimg}}" />
         </view>
         <view class="roles">
             <text style="color:#fff">{{userData.nickname}}</text>

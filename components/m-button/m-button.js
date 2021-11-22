@@ -38,7 +38,7 @@ Component({
    */
   methods: {
     onMyButtonTap: function () {
-      if (!app.globalData.userData.tel) {
+      if (!app.globalData.userData.phone) {
         wx.showModal({
           title: "温馨提示",
           content: "此功能需要先完成实名认证，是否前往",

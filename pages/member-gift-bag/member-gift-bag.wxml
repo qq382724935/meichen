@@ -36,10 +36,10 @@
     </view>
     <view class="footer">
         <view>
-            <text class="money">￥98</text>
+            <text class="money">￥{{money}}</text>
         </view>
         <view>
-            <m-button width="{{106}}">立即支付</m-button>
+            <m-button width="{{106}}" bindcustomevent="pay">立即支付</m-button>
         </view>
     </view>
 </view>

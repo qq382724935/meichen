@@ -26,14 +26,19 @@ Page({
     this.setData({ markAmount: e.detail.value });
   },
   confirmClick: function (e) {
-    request.post("/order/add", {
+    request.get("/order/fast-pay", {
       data: {
-        order_amount: "当面付",
-        good_num: "1",
         order_amount: this.data.markAmount,
       },
       success: function (res) {
-        console.log("res", res);
+        const config = res.data.result.config;
+        wx.requestOrderPayment({
+          timeStamp:config.timestamp,
+          nonceStr:config.nonceStr,
+          signType:'MD5',
+          paySign:config.paySign,
+          package:config.package,
+        });
       },
       fail: function (fail) {
         console.log("fail", fail);
