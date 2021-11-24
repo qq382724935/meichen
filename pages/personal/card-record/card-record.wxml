@@ -1,10 +1,10 @@
 <view class="container">
-    <view class="card-status">
+    <!-- <view class="card-status">
         <block wx:for="{{statusList}}" wx:key="key">
             <text bind:tap="getStatus" data-key="{{item.key}}" class="{{item.key===indexKey?'click':''}}">
                 {{item.text}}
             </text>
         </block>
-    </view>
+    </view> -->
     <card-list list="{{cardList}}" status="{{30}}" background="/static/used.png"></card-list>
 </view>

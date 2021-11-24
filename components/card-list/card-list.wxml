@@ -10,7 +10,7 @@
             </view>
             <view class="amount" style="background-color:{{status>10?'#c4c4c4':'#96bcf4'}}">
                 <text class="white">￥</text>
-                <text class="white" style="font-size:36px">{{item.money}}</text>
+                <text class="white" style="font-size:16px">{{item.money}}</text>
             </view>
         </view>
     </block>

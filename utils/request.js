@@ -1,7 +1,6 @@
 var util = require("util.js");
 module.exports = {
   uniqueId: "",
-
   /**
    * 全局请求函数
    * 1、加入错误提醒
@@ -187,9 +186,9 @@ module.exports = {
     return this.uniqueId;
   },
 
-  showLoading: function (title='') {
+  showLoading: function (title = "") {
     wx.showLoading({
-      title: title||"加载中",
+      title: title || "加载中",
     });
   },
 
@@ -215,21 +214,17 @@ module.exports = {
     }
   },
   // 创建订单
-  createOrder: function (option,type=false) {
+  createOrder: function (option, type = false) {
     const self = this;
-    const {success,fail} =option
+    const { success, fail } = option;
     this.post("/order/add", {
       data: option.data,
       success: function (res) {
         const order_sn = res.data.result.order_no;
-        if (success && typeof success === "function"&&type) {
+        if (success && typeof success === "function" && type) {
           success();
         } else {
-          self.orderPay(
-            order_sn,
-            success,
-            fail
-          );
+          self.orderPay(order_sn, success, fail);
         }
       },
       fail: function (fail) {

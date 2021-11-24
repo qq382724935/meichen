@@ -40,7 +40,7 @@ Page({
             name: item.nickname,
             id: item.id,
             number: item.count,
-            avatar: item.avatar,
+            avatar: item.headimg,
             createDate: "20200",
           };
         });

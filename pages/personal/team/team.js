@@ -30,8 +30,8 @@ Page({
         const list = res.data.result.map((item) => {
           total += item.count;
           return {
-            roleName: item.level_name,
-            id: item.level_id,
+            roleName: item.vip_name,
+            id: item.vip_code,
             number: item.count,
           };
         });

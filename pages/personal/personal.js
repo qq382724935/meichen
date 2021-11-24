@@ -17,7 +17,9 @@ Component({
           selected: 1,
         });
       }
-      this.setData({userData:app.globalData.userData})
+      const userData= app.globalData.userData;
+      const total = Number.parseFloat(userData.balance_total-userData.balance_used,2);
+      this.setData({userData,total})
     },
   },
   data: {
@@ -29,6 +31,7 @@ Component({
       tel: "",
       level_id:''
     },
+    total:0,
     wrapperList: [
       {
         text: "推广",

@@ -7,7 +7,7 @@
         </view>
         <view class="roles">
             <text style="color:#fff">{{userData.nickname}}</text>
-            <text class="role">{{userData.level_id}}</text>
+            <text class="role">{{userData.vip_name}}</text>
         </view>
     </view>
     <view class="main">
@@ -23,7 +23,7 @@
             <view class="remind">
                 <view class="withdrawal-amount">
                     <text class="text">当前可提现金额</text>
-                    <text class="amount">￥{{userData.balance}}</text>
+                    <text class="amount">￥{{total}}</text>
                 </view>
                 <view class="balance-detal">
                     <text class="balance">余额明细</text>
@@ -39,11 +39,11 @@
                 </view>
                 <view class="entry-item">
                     <text>累计到账</text>
-                    <text>￥{{userData.total_amount}}</text>
+                    <text>￥{{userData.balance_total}}</text>
                 </view>
                 <view class="entry-item">
                     <text>累计提现</text>
-                    <text>￥0.00</text>
+                    <text>￥{{userData.balance_used}}</text>
                 </view>
             </view>
         </view>
