@@ -27,7 +27,7 @@ Component({
       nickname: "",
       total_amount: "",
       balance: "",
-      avatar: "",
+      headimg: "",
       tel: "",
       level_id:''
     },

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "推广码",
   "usingComponents": {
-    "m-button": "/components/m-button/m-button"
+    "m-button": "/components/m-button/m-button",
+    "painter": "/components/painter/painter"
   }
 }

@@ -89,6 +89,12 @@
           "pathName": "pages/index/index",
           "query": "pid=8",
           "scene": null
+        },
+        {
+          "name": "pages/personal/extension/extension",
+          "pathName": "pages/personal/extension/extension",
+          "query": "",
+          "scene": null
         }
       ]
     }

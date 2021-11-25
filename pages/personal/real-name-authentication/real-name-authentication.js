@@ -40,7 +40,9 @@ Page({
         },
         success: function (res) {
           if (res.data.code === 200) {
-            wx.navigateBack();
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
             wx.showToast({ title: "认证成功" });
           } else {
             wx.showToast({ title: "认证失败" });
