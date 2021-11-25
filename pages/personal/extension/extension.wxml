@@ -1,5 +1,6 @@
 <!-- pages/personal/extension/extension.wxml -->
 <view class="container">
-    <image class="image" src="/static/personal/extensionbkg.png" />
+    <!-- <image class="image" src="/static/personal/extensionbkg.png" /> -->
+    <image class="image" src="{{qrcode}}" />
     <m-button width="300">保存图片</m-button>
 </view>

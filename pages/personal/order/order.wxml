@@ -13,14 +13,14 @@
         <block wx:for="{{orderList}}">
             <view class="order-item">
                 <view class="order-header">
-                    <text class="no">订单编号：{{item.order_sn}}</text>
+                    <text class="no">订单编号：{{item.order_no}}</text>
                     <view class="order-header-right">
-                        <text class="status">{{item.pay_status==='0'?'待付款':'已付款'}}</text>
+                        <text class="status">{{item.payment_status==='0'?'待付款':'已付款'}}</text>
                         <image style="width:10px;height:9px" src="/static/personal/del.png" />
                     </view>
                 </view>
                 <view class="order-content">
-                    <image style="width:60px;height:60px" src="{{item.ima_path}}" />
+                    <image style="width:60px;height:60px" src="{{item.goods_cover}}" />
                     <view class="order-content-info">
                         <view>
                             <text style="color:#333333;font-weight:500;">
@@ -28,11 +28,11 @@
                             </text>
                         </view>
                         <view>
-                            <text>{{item.add_time}}</text>
+                            <text>{{item.create_at}}</text>
                         </view>
                     </view>
                     <view class="order-content-number">
-                        <text>x{{item.order_num}}</text>
+                        <text>x{{item.number_goods}}</text>
                     </view>
                 </view>
                 <view class="order-footer">
