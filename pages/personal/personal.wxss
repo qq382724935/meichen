@@ -142,3 +142,9 @@ page {
 .entry-item:last-child {
   border-right: none;
 }
+
+
+.headportrait {
+  width: 180px;
+  height: 168px;
+}

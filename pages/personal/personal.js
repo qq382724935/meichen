@@ -8,21 +8,35 @@
  */
 
 var app = getApp();
+var request = app.request;
+var auth = app.auth;
 
 Component({
   pageLifetimes: {
     show() {
       if (typeof this.getTabBar === "function" && this.getTabBar()) {
-        this.getTabBar().setData({
-          selected: 1,
-        });
+        this.getTabBar().setData({selected: 1});
       }
-      const userData= app.globalData.userData;
-      const total = Number.parseFloat(userData.balance_total-userData.balance_used,2);
-      this.setData({userData,total})
+      const self = this;
+      if (!auth.isLogin()) {
+        request.showLoading();
+        auth
+          .doLogin()
+          .then(() => {
+            self.init()
+            wx.hideLoading();
+          })
+          .catch(() => {
+            wx.hideLoading();
+          });
+      }else{
+        self.init()
+      }
     },
+    
   },
   data: {
+    isLogin:false,
     userData: {
       nickname: "",
       total_amount: "",
@@ -67,4 +81,13 @@ Component({
       },
     ],
   },
+  methods:{
+    init:function(){
+      const userData= app.globalData.userData;
+      if(userData){
+        const total = Number.parseFloat(userData.balance_total-userData.balance_used,2);
+        this.setData({userData,total,isLogin:true})
+      }
+    }
+  }
 });

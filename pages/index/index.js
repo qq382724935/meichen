@@ -2,7 +2,7 @@
  * @Author: 刘利军
  * @Date: 2021-09-09 16:42:23
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-11-11 19:05:38
+ * @LastEditTime: 2021-11-29 17:47:52
  * @Description:
  * @PageName:
  */
@@ -48,22 +48,10 @@ Component({
           .then(() => {
             wx.hideLoading();
           })
-          .catch((error) => {
-            console.log("error", error);
+          .catch(() => {
+            wx.hideLoading();
           });
-      } else {
-        request.showLoading();
       }
-      const page = getCurrentPages()[0];
-      if(page.options.pid){
-
-      page.options.pid&& request.get('/user/bind',{
-        data:{
-          pid:page.options.pid
-        }
-      })
-    }
-
     },
   },
 });

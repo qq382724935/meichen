@@ -58,7 +58,7 @@ Page({
                 css: {
                   bottom: "108rpx",
                   right: "88rpx",
-                  width: "88rpx",
+                  width: "288rpx",
                 },
               },
             ],

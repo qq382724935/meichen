@@ -1,5 +1,6 @@
 <!-- pages/personal.wxml -->
 <view class="container">
+<block wx:if="{{isLogin}}">
     <image class="image" src="/static/personal/backgroud.png" />
     <view class="role-info">
         <view class="header">
@@ -19,7 +20,7 @@
                 </navigator>
             </block>
         </view>
-        <view class="commission">
+        <!-- <view class="commission">
             <view class="remind">
                 <view class="withdrawal-amount">
                     <text class="text">当前可提现金额</text>
@@ -46,7 +47,7 @@
                     <text>￥{{userData.balance_used}}</text>
                 </view>
             </view>
-        </view>
+        </view> -->
         <!-- <view class="help_center">
             <view style="padding:20px;font-size:20px">帮助中心</view>
             <view class="content">
@@ -59,4 +60,14 @@
             </view>
         </view> -->
     </view>
+</block>
+<block wx:else>
+    <view style="flex:1;display: flex;align-items: center;justify-content:space-evenly;flex-direction: column;">
+    <view style="display: flex;flex-direction: column;align-items:center">
+        <image class="headportrait" mode="widthFix" src="/static/headportrait.png"></image>
+         <text style="margin-top: 18px;margin-bottom:18px;">您还未登录，登录后可享受更多服务</text>
+        <m-button width="150" goType='home'>登录</m-button>
+    </view>
+    </view>
+</block>
 </view>

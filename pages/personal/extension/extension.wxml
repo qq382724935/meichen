@@ -5,5 +5,5 @@
   <view style="margin:10px;">
     <painter palette="{{imgDraw}}"></painter>
   </view>
-  <m-button width="300">保存图片</m-button>
+  <m-button width="150">保存图片</m-button>
 </view>

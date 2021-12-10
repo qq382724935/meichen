@@ -40,10 +40,22 @@ Page({
         },
         success: function (res) {
           if (res.data.code === 200) {
-            wx.switchTab({
-              url: '/pages/index/index',
-            })
             wx.showToast({ title: "认证成功" });
+            request.get("/user/info", {
+              success: function (info) {
+                const infoData = info.data.result;
+                app.globalData.userData = infoData;
+                wx.switchTab({
+                  url: '/pages/index/index',
+                })
+              },
+              fail:function(){
+                wx.showToast({
+                  title: "获取用户信息失败，请重新",
+                });
+              }
+            });
+          
           } else {
             wx.showToast({ title: "认证失败" });
           }

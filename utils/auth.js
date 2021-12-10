@@ -36,11 +36,7 @@ module.exports = {
                           reject(false);
                         }
                       });
-                    } else if (res.data.code == -1) {
-                      wx.redirectTo({
-                        url: "/pages/login/login",
-                      });
-                    } else {
+                    }else {
                       reject(false);
                     }
                   },
@@ -62,6 +58,6 @@ module.exports = {
 
   /** 是否已授权 */
   isLogin: function () {
-    return this.app().globalData.user ? true : false;
+    return (this.app().globalData.userData) ? true : false;
   },
 };
