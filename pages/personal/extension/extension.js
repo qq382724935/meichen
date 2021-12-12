@@ -2,7 +2,7 @@
  * @Author: 刘利军
  * @Date: 2021-09-11 14:42:24
  * @LastEditors: 刘利军
- * @LastEditTime: 2021-11-25 16:35:29
+ * @LastEditTime: 2021-12-12 12:26:54
  * @Description:
  * @PageName:
  */
@@ -28,36 +28,48 @@ Page({
       success: function (res) {
         self.setData({
           imgDraw: {
-            width: "600rpx",
-            height: "1056rpx",
+            width: "720rpx",
+            height: "1156rpx",
             background: "/static/personal/extensionbkg.png",
             views: [
               {
                 type: "image",
+                url: "/static/personal/extensionbkg2.png",
+                css: {
+                  top: "344rpx",
+                  left: "88rpx",
+                  right: "88rpx",
+                  width: "528rpx",
+                },
+              },
+              {
+                type: "text",
+                text: "推广有理",
+                css: {
+                  top: "122rpx",
+                  left: "168rpx",
+                  fontWight: "bold",
+                  fontSize: "96rpx",
+                  color: "#82C4FF",
+                },
+              },
+              {
+                type: "image",
                 url: userData?.headimg || "",
                 css: {
-                  bottom: "108rpx",
-                  left: "98rpx",
+                  top: "288rpx",
+                  left: "298rpx",
                   width: "148rpx",
                   height: "148rpx",
                   borderRadius: "50%",
                 },
               },
               {
-                type: "text",
-                text: userData?.nickname || "",
-                css: {
-                  bottom: "188rpx",
-                  left: "268rpx",
-                  fontSize: "30rpx",
-                },
-              },
-              {
                 type: "image",
                 url: res.data.result.file,
                 css: {
-                  bottom: "108rpx",
-                  right: "88rpx",
+                  top: "588rpx",
+                  left: "238rpx",
                   width: "288rpx",
                 },
               },
